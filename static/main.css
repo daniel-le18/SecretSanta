@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+ body,
+html {
+	background: url("/static/img/background.jpg") center;
+	height: 100%;
+	margin: 0;
+}
+.nav-bar {
+	display: flex;
+	margin-left: 25%;
+	margin-right: 38%;
+}
+.menu-bar {
+	margin-top: 5%;
+	border-radius: 25px;
+	display: inline-flex;
+	background-color: rgba(0, 0, 0, .4);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	align-items: center;
+	padding: 0 10px;
+}
+.users {
+	margin-top: 5%;
+	border-radius: 25px;
+	display: inline-flex;
+	background-color: rgba(0, 0, 0, .4);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	align-items: center;
+	padding: 0 10px;
+	margin-left: 10%;
+}
+.menu-bar li {
+	list-style: none;
+	padding: 12px 16px;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+	font-size: 20px;
+}
+.users li {
+	list-style: none;
+	color: white;
+	padding: 12px 16px;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+	font-size: 20px;
+}
+.nav-bar ul li a {
+	text-decoration: none;
+	color: white;
+	font-family: 'Gochi Hand', cursive;
+	padding: 12px 16px;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+	font-size: 35px;
+}
+.menu-bar li::before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	transition: 0.2s;
+	border-radius: 25px;
+}
+.users li::before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	transition: 0.2s;
+	border-radius: 25px;
+}
+.menu-bar li:hover {
+	color: black;
+}
+.users li:hover {
+	color: black;
+}
+.menu-bar li:hover::before {
+	background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
+	box-shadow: 0px 3px 20px 0px red;
+	transform: scale(1.2);
+}
+.users li:hover::before {
+	background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
+	box-shadow: 0px 3px 20px 0px red;
+	transform: scale(1.2);
+}
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+ .container {
+	padding-top: 20%;
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	width: 1000px;
+	height: 480px;
+	justify-content: center;
+}
+h1 {
+	font-family: 'Gochi Hand', cursive;
+	text-align: center;
+	font-size: 1em;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	color: #e8edec;
+	font-size: 80px;
+}
+#timer {
+	color: #f6f4f3;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 1em;
+	letter-spacing: 5px;
+	margin-top: 10%;
+}
+.days,
+.hours,
+.minutes,
+.seconds {
+	display: inline-block;
+	padding: 20px;
+	width: 200px;
+	border-radius: 5px;
+	font-size: 20px;
+}
+.days {
+	background: #ef2f3c;
+}
+.hours {
+	background: #f6f4f3;
+	color: #183059;
+}
+.minutes {
+	background: #276fbf;
+}
+.seconds {
+	background: #f0a202;
+}
+.numbers {
+	font-family: 'Gochi Hand', cursive;
+	color: #183059;
+	font-size: 6em;
+}
