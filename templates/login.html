@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block body %}
+<div class="wrapper">
+  <div class="title">LOG IN</div>
+
+  <!-- FORM -->
+  <form class="form" method="POST" action="">
+    {{ form.hidden_tag() }}
+
+    <!-- EMAIL -->
+    <div class="input_field">
+      <i class="far fa-envelope"></i>
+      {{form.email(class="input", placeholder="EMAIL")}}
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input_field">
+      <i class="fas fa-lock"></i>
+      {{form.password(class="input",placeholder="PASSWORD",type="password")}}
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="btn-place">{{form.submit(class="btn")}}</div>
+  </form>
+</div>
+
+{% endblock body%}

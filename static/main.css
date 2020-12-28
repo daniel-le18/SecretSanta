@@ -1,157 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
- body,
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+body,
 html {
-	background: url("/static/img/background.jpg") center;
-	height: 100%;
-	margin: 0;
+  background: url("/static/img/background.jpg") center;
+  height: 100%;
+  margin: 0;
 }
 .nav-bar {
-	display: flex;
-	margin-left: 25%;
-	margin-right: 38%;
+  display: flex;
+  margin-left: 25%;
+  margin-right: 38%;
 }
 .menu-bar {
-	margin-top: 5%;
-	border-radius: 25px;
-	display: inline-flex;
-	background-color: rgba(0, 0, 0, .4);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	align-items: center;
-	padding: 0 10px;
+  margin-top: 5%;
+  border-radius: 25px;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 10px;
 }
 .users {
-	margin-top: 5%;
-	border-radius: 25px;
-	display: inline-flex;
-	background-color: rgba(0, 0, 0, .4);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	align-items: center;
-	padding: 0 10px;
-	margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 25px;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 10px;
+  margin-left: 10%;
 }
 .menu-bar li {
-	list-style: none;
-	padding: 12px 16px;
-	margin: 0 8px;
-	position: relative;
-	cursor: pointer;
-	white-space: nowrap;
-	font-size: 20px;
+  list-style: none;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 20px;
 }
 .users li {
-	list-style: none;
-	color: white;
-	padding: 12px 16px;
-	margin: 0 8px;
-	position: relative;
-	cursor: pointer;
-	white-space: nowrap;
-	font-size: 20px;
+  list-style: none;
+  color: white;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 20px;
 }
 .nav-bar ul li a {
-	text-decoration: none;
-	color: white;
-	font-family: 'Gochi Hand', cursive;
-	padding: 12px 16px;
-	margin: 0 8px;
-	position: relative;
-	cursor: pointer;
-	white-space: nowrap;
-	font-size: 35px;
+  text-decoration: none;
+  color: white;
+  font-family: "Gochi Hand", cursive;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 35px;
 }
 .menu-bar li::before {
-	content: " ";
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-	transition: 0.2s;
-	border-radius: 25px;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.2s;
+  border-radius: 25px;
 }
 .users li::before {
-	content: " ";
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-	transition: 0.2s;
-	border-radius: 25px;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.2s;
+  border-radius: 25px;
 }
 .menu-bar li:hover {
-	color: black;
+  color: black;
 }
 .users li:hover {
-	color: black;
+  color: black;
 }
 .menu-bar li:hover::before {
-	background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
-	box-shadow: 0px 3px 20px 0px red;
-	transform: scale(1.2);
+  background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px red;
+  transform: scale(1.2);
 }
 .users li:hover::before {
-	background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
-	box-shadow: 0px 3px 20px 0px red;
-	transform: scale(1.2);
+  background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px red;
+  transform: scale(1.2);
 }
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
- .container {
-	padding-top: 20%;
-	position: relative;
-	margin: auto;
-	overflow: hidden;
-	width: 1000px;
-	height: 480px;
-	justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+.container {
+  padding-top: 20%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 1000px;
+  height: 480px;
+  justify-content: center;
 }
 h1 {
-	font-family: 'Gochi Hand', cursive;
-	text-align: center;
-	font-size: 1em;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	color: #e8edec;
-	font-size: 80px;
+  font-family: "Gochi Hand", cursive;
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #e8edec;
+  font-size: 80px;
 }
 #timer {
-	color: #f6f4f3;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Gochi Hand', cursive;
-	font-size: 1em;
-	letter-spacing: 5px;
-	margin-top: 10%;
+  color: #f6f4f3;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1em;
+  letter-spacing: 5px;
+  margin-top: 10%;
 }
 .days,
 .hours,
 .minutes,
 .seconds {
-	display: inline-block;
-	padding: 20px;
-	width: 200px;
-	border-radius: 5px;
-	font-size: 20px;
+  display: inline-block;
+  padding: 20px;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 .days {
-	background: #ef2f3c;
+  background: #ef2f3c;
 }
 .hours {
-	background: #f6f4f3;
-	color: #183059;
+  background: #f6f4f3;
+  color: #183059;
 }
 .minutes {
-	background: #276fbf;
+  background: #276fbf;
 }
 .seconds {
-	background: #f0a202;
+  background: #f0a202;
 }
 .numbers {
-	font-family: 'Gochi Hand', cursive;
-	color: #183059;
-	font-size: 6em;
+  font-family: "Gochi Hand", cursive;
+  color: #183059;
+  font-size: 6em;
+}
+
+/* SIGN UP FORM */
+.wrapper {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 60px 45px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
+
+.wrapper .title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(181, 146, 53);
+  font-family: "Gochi Hand", cursive;
+}
+
+.wrapper .form .input_field {
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #eeeeee;
+  font-size: 25px;
+  font-family: "Gochi Hand", cursive;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  font-size: 25px;
+  background: #eeeeee;
+  text-shadow: #1d2120;
+  text-indent: 15%;
+  font-family: "Gochi Hand", cursive;
+}
+.password {
+  width: 100%;
+  border: none;
+  font-size: 25px;
+  background: #eeeeee;
+  text-shadow: #1d2120;
+  text-indent: 15%;
+  font-family: caption;
+}
+.wrapper .form .btn {
+  width: 70%;
+  margin: 20px auto 0;
+  background: rgb(181, 146, 53);
+  text-align: center;
+  padding: 12px;
+  border-radius: 25px;
+  font-family: "Gochi Hand", cursive;
+  color: #e8edec;
+  font-size: 20px;
+  border: none;
+}
+.btn-place {
+  margin-left: 25%;
+}
+.wrapper .form .btn a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Gochi Hand", cursive;
+  font-size: 25px;
+}
+
+.wrapper .form .input_field i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #1d2120;
+  padding-top: 7px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: "Gochi Hand", cursive;
+  padding-left: 10%;
+  font-size: 20px;
+  color: #a6b8b4;
+}
+
+.forgot {
+  text-align: center;
+  padding-top: 5%;
+  font-family: "Gochi Hand", cursive;
+  font-size: 20px;
+}
+
+.forgot a {
+  text-decoration: none;
 }

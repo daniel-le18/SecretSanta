@@ -12,6 +12,10 @@
       href="{{url_for('static',filename='img/bell.png')}}"
     />
     <script src="{{url_for('static',filename='snow.js')}}"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
 
     {% if title %}
     <title>Secret Santa's {{ title }}</title>
@@ -30,13 +34,13 @@
         <li class="nav">
           <a href="{{url_for('secretsanta')}}">SECRET SANTA</a>
         </li>
-        <li class="nav"><a href="{{url_for('thanks')}}">THANKS</a></li>
         <li class="nav"><a href="{{url_for('about')}}">ABOUT</a></li>
+        <li class="nav"><a href="{{url_for('thanks')}}">THANKS</a></li>
       </ul>
 
       <ul class="users">
-        <li class="nav"><a href="#">LOG IN</a></li>
-        <li class="nav"><a href="#">SIGN UP</a></li>
+        <li class="nav"><a href="{{url_for('login')}}">LOG IN</a></li>
+        <li class="nav"><a href="{{url_for('register')}}">SIGN UP</a></li>
       </ul>
     </div>
 

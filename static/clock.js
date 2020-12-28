@@ -6,16 +6,13 @@ function clock() {
 
   // countdown fnc
   let timer = setInterval(function () {
-
     // get today's date
     const today = new Date().getTime();
 
     // get the difference
     let diff;
-    if (month > 6) 
-      diff = ChristmastNextYear - today;
-    else
-      diff = Christmast - today;
+    if (month > 6) diff = ChristmastNextYear - today;
+    else diff = Christmast - today;
 
     //Calculate days
     let days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -25,14 +22,22 @@ function clock() {
 
     // display
     document.getElementById("timer").innerHTML =
-      "<div class=\"days\"> \
-      <div class=\"numbers\">" + days + "</div>days</div> \
-    <div class=\"hours\"> \
-      <div class=\"numbers\">" + hours + "</div>hours</div> \
-    <div class=\"minutes\"> \
-      <div class=\"numbers\">" + minutes + "</div>minutes</div> \
-    <div class=\"seconds\"> \
-      <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+      '<div class="days"> \
+      <div class="numbers">' +
+      days +
+      '</div>days</div> \
+    <div class="hours"> \
+      <div class="numbers">' +
+      hours +
+      '</div>hours</div> \
+    <div class="minutes"> \
+      <div class="numbers">' +
+      minutes +
+      '</div>minutes</div> \
+    <div class="seconds"> \
+      <div class="numbers">' +
+      seconds +
+      "</div>seconds</div> \
     </div>";
   }, 1000);
 }
