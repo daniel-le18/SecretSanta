@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap);
 body,
 html {
-  background: url("/static/img/background.jpg") center;
+  background: url(/static/img/background.jpg) center;
   height: 100%;
   margin: 0;
 }
@@ -42,7 +42,7 @@ html {
 }
 .users li {
   list-style: none;
-  color: white;
+  color: #fff;
   padding: 12px 16px;
   margin: 0 8px;
   position: relative;
@@ -52,7 +52,7 @@ html {
 }
 .nav-bar ul li a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-family: "Gochi Hand", cursive;
   padding: 12px 16px;
   margin: 0 8px;
@@ -84,22 +84,21 @@ html {
   border-radius: 25px;
 }
 .menu-bar li:hover {
-  color: black;
+  color: #000;
 }
 .users li:hover {
-  color: black;
+  color: #000;
 }
 .menu-bar li:hover::before {
   background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
-  box-shadow: 0px 3px 20px 0px red;
+  box-shadow: 0 3px 20px 0 red;
   transform: scale(1.2);
 }
 .users li:hover::before {
   background: linear-gradient(to bottom, #ef2f3c, #d2d1d3);
-  box-shadow: 0px 3px 20px 0px red;
+  box-shadow: 0 3px 20px 0 red;
   transform: scale(1.2);
 }
-@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
 .container {
   padding-top: 20%;
   position: relative;
@@ -155,8 +154,6 @@ h1 {
   color: #183059;
   font-size: 6em;
 }
-
-/* SIGN UP FORM */
 .wrapper {
   max-width: 500px;
   width: 100%;
@@ -169,16 +166,14 @@ h1 {
   transform: translate(-50%, -50%);
   border-radius: 20px;
 }
-
 .wrapper .title {
   margin-bottom: 20px;
   text-align: center;
   font-size: 40px;
-  font-weight: bold;
-  color: rgb(181, 146, 53);
+  font-weight: 700;
+  color: #b59235;
   font-family: "Gochi Hand", cursive;
 }
-
 .wrapper .form .input_field {
   position: relative;
   margin-bottom: 10px;
@@ -186,16 +181,15 @@ h1 {
   width: 100%;
   padding: 12px;
   border: none;
-  background: #eeeeee;
+  background: #eee;
   font-size: 25px;
   font-family: "Gochi Hand", cursive;
 }
-
 .input {
   width: 100%;
   border: none;
   font-size: 25px;
-  background: #eeeeee;
+  background: #eee;
   text-shadow: #1d2120;
   text-indent: 15%;
   font-family: "Gochi Hand", cursive;
@@ -204,7 +198,7 @@ h1 {
   width: 100%;
   border: none;
   font-size: 25px;
-  background: #eeeeee;
+  background: #eee;
   text-shadow: #1d2120;
   text-indent: 15%;
   font-family: caption;
@@ -212,7 +206,7 @@ h1 {
 .wrapper .form .btn {
   width: 70%;
   margin: 20px auto 0;
-  background: rgb(181, 146, 53);
+  background: #b59235;
   text-align: center;
   padding: 12px;
   border-radius: 25px;
@@ -230,7 +224,6 @@ h1 {
   font-family: "Gochi Hand", cursive;
   font-size: 25px;
 }
-
 .wrapper .form .input_field i {
   position: absolute;
   top: 10px;
@@ -239,22 +232,18 @@ h1 {
   color: #1d2120;
   padding-top: 7px;
 }
-
 ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
   font-family: "Gochi Hand", cursive;
   padding-left: 10%;
   font-size: 20px;
   color: #a6b8b4;
 }
-
 .forgot {
   text-align: center;
   padding-top: 5%;
   font-family: "Gochi Hand", cursive;
   font-size: 20px;
 }
-
 .forgot a {
   text-decoration: none;
 }
