@@ -4,7 +4,7 @@ html {
   background: url(/static/img/background.jpg) center;
   height: 100%;
   margin: 0;
-  font-family: "Gochi Hand", cursive;
+  font-family: "Gochi Hand", cursive !important;
 }
 .nav-bar {
   display: flex;
@@ -68,12 +68,12 @@ html {
   transform: scale(1.2);
 }
 .container {
-  padding-top: 20%;
+  padding-top: 15%;
   position: relative;
   margin: auto;
   overflow: hidden;
   width: 1000px;
-  height: 480px;
+  height: 500px;
   justify-content: center;
 }
 h1 {
@@ -82,7 +82,17 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 5px;
   color: #e8edec;
-  font-size: 80px;
+  font-size: 60px;
+  color: rgb(240, 162, 2);
+}
+h2 {
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #e8edec;
+  font-size: 40px;
+  color: rgb(239, 47, 60);
 }
 #timer {
   color: #f6f4f3;
@@ -156,13 +166,13 @@ h1 {
   text-shadow: #1d2120;
   text-indent: 15%;
 }
+
 .wrapper .form .btn {
   width: 70%;
   margin: 20px auto 0;
   background: #b59235;
   padding: 12px;
   border-radius: 25px;
-  font-family: "Gochi Hand", cursive;
   color: #e8edec;
   font-size: 20px;
   border: none;
@@ -174,18 +184,12 @@ h1 {
   left: 10px;
   font-size: 20px;
   color: #1d2120;
-  padding-top: 7px;
+  padding-top: 3%;
 }
-::-webkit-input-placeholder {
-  font-family: "Gochi Hand", cursive;
-  padding-left: 10%;
-  font-size: 20px;
-  color: #a6b8b4;
-}
+
 .forgot {
   text-align: center;
   padding-top: 5%;
-  font-family: "Gochi Hand", cursive;
   font-size: 20px;
 }
 .forgot a {
