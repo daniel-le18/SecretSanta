@@ -39,8 +39,15 @@
       </ul>
 
       <ul class="users">
-        <li class="nav"><a href="{{url_for('login')}}">LOG IN</a></li>
-        <li class="nav"><a href="{{url_for('register')}}">SIGN UP</a></li>
+        {% if current_user.is_authenticated %}
+          <li class="nav"><a href="{{url_for('profile')}}">PROFILE</a></li>
+          <li class="nav"><a href="{{url_for('logout')}}">LOG OUT</a></li>
+        {% else %}
+          <li class="nav"><a href="{{url_for('login')}}">LOG IN</a></li>
+          <li class="nav"><a href="{{url_for('register')}}">SIGN UP</a></li>
+        {% endif %}
+        
+
       </ul>
 
     </div>
