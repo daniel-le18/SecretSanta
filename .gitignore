@@ -3,3 +3,4 @@ venv
 file.txt
 prepros.config
 .DS_Store
+SecretSanta/__pycache__

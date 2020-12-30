@@ -11,6 +11,11 @@
       type="image/png"
       href="{{url_for('static',filename='img/bell.png')}}"
     />
+    <link
+      rel="apple-touch-icon"
+      href="{{url_for('static',filename='img/bell.png')}}"
+    />
+
     <script src="{{url_for('static',filename='snow.js')}}"></script>
     <link
       rel="stylesheet"
@@ -40,19 +45,14 @@
 
       <ul class="users">
         {% if current_user.is_authenticated %}
-          <li class="nav"><a href="{{url_for('profile')}}">PROFILE</a></li>
-          <li class="nav"><a href="{{url_for('logout')}}">LOG OUT</a></li>
+        <li class="nav"><a href="{{url_for('profile')}}">PROFILE</a></li>
+        <li class="nav"><a href="{{url_for('logout')}}">LOG OUT</a></li>
         {% else %}
-          <li class="nav"><a href="{{url_for('login')}}">LOG IN</a></li>
-          <li class="nav"><a href="{{url_for('register')}}">SIGN UP</a></li>
+        <li class="nav"><a href="{{url_for('login')}}">LOG IN</a></li>
+        <li class="nav"><a href="{{url_for('register')}}">SIGN UP</a></li>
         {% endif %}
-        
-
       </ul>
-
     </div>
-
-
 
     {%block body%}{%endblock body%}
   </body>
