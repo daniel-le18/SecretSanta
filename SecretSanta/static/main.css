@@ -8,8 +8,7 @@ html {
 }
 .nav-bar {
   display: flex;
-  margin-left: 25%;
-  margin-right: 38%;
+  margin-right: 20%;
 }
 .menu-bar,
 .users {
@@ -21,10 +20,9 @@ html {
   backdrop-filter: blur(10px);
   align-items: center;
   padding: 0 10px;
+  margin-left: 5%;
 }
-.users {
-  margin-left: 10%;
-}
+
 .menu-bar li,
 .users li {
   list-style: none;
@@ -33,7 +31,7 @@ html {
   position: relative;
   cursor: pointer;
   white-space: nowrap;
-  font-size: 20px;
+  font-size: 30px;
 }
 .nav-bar ul li a {
   text-decoration: none;

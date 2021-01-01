@@ -21,7 +21,6 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     />
-
     {% if title %}
     <title>Secret Santa's {{ title }}</title>
     {% else %}
@@ -37,10 +36,12 @@
       <ul class="menu-bar">
         <li class="nav"><a href="{{url_for('home')}}">HOME</a></li>
         <li class="nav">
-          <a href="{{url_for('secretsanta')}}">SECRET SANTA</a>
+          <a href="{{url_for('secretsanta')}}">JOIN</a>
         </li>
         <li class="nav"><a href="{{url_for('about')}}">ABOUT</a></li>
         <li class="nav"><a href="{{url_for('thanks')}}">THANKS</a></li>
+        <li class="nav"><a href="#">CONTACT</a></li>
+
       </ul>
 
       <ul class="users">
