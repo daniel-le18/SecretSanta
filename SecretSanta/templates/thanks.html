@@ -1,3 +1,38 @@
 {% extends "base.html" %} {% block body %}
-<h1>Thanks</h1>
+
+<div class="wrapper-post">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  {% for post in posts %}
+  <section class="display-content">
+    <article class="media content-section">
+      <img
+        class="rounded-circle article-img"
+        src="{{url_for('static', filename='profile_pics/'+ post.author.image_file)}}"
+      />
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{post.author.username}}</a>
+          <small class="text-muted"
+            >Posted on {{ post.date_posted.strftime('%B %d,%Y') }}</small
+          >
+        </div>
+        <h2>
+          <a
+            class="article-title"
+            href="{{url_for('new_post',post_id=post.id)}}"
+            >{{post.title}}</a
+          >
+        </h2>
+        <p class="article-content">{{ post.content }}</p>
+      </div>
+    </article>
+  </section>
+  {% endfor %}
+</div>
+
 {% endblock body%}

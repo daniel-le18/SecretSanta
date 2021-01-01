@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, SubmitField
+from wtforms import StringField, BooleanField, SubmitField, TextAreaField
+from wtforms.fields.simple import TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 from SecretSanta.models import User
 
@@ -42,3 +43,9 @@ class LoginForm(FlaskForm):
                                        Length(min=4, max=12)])
     remember = BooleanField("REMEMBER ME")
     submit = SubmitField("LOG IN")
+
+
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Post')

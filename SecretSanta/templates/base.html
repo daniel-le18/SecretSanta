@@ -45,6 +45,7 @@
 
       <ul class="users">
         {% if current_user.is_authenticated %}
+        <li class="nav"><a href="{{url_for('new_post')}}">POST</a></li>
         <li class="nav"><a href="{{url_for('profile')}}">PROFILE</a></li>
         <li class="nav"><a href="{{url_for('logout')}}">LOG OUT</a></li>
         {% else %}
@@ -54,6 +55,9 @@
       </ul>
     </div>
 
-    {%block body%}{%endblock body%}
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <h2 class="red-text" style="color: red;";">{{ message }}</h2>
+    {% endfor %} {% endif %} {% endwith%} {%block body%}{%endblock body%}
   </body>
 </html>

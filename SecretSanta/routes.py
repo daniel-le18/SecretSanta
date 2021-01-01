@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for, request
 from SecretSanta import app, db, bcrypt
-from SecretSanta.forms import RegistrationForm, LoginForm
+from SecretSanta.forms import RegistrationForm, LoginForm, PostForm
 from SecretSanta.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -19,7 +19,8 @@ def secretsanta():
 
 @app.route("/thanks")
 def thanks():
-    return render_template("thanks.html", title="Thanks")
+    posts = Post.query.all()
+    return render_template("thanks.html", title="Thanks", posts=posts)
 
 
 @app.route("/about")
@@ -73,3 +74,18 @@ def logout():
 @login_required
 def profile():
     return render_template("profile.html", title="Profile")
+
+
+@app.route("/thanks/new", methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data,
+                    content=form.content.data,
+                    author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash(f'Post has been created !')
+        return redirect(url_for('thanks'))
+    return render_template("new_post.html", title="New Post", form=form)
