@@ -1,8 +1,12 @@
 from flask import render_template, flash, redirect, url_for, request, abort
 from SecretSanta import app, db, bcrypt
-from SecretSanta.forms import RegistrationForm, LoginForm, PostForm
+from SecretSanta.forms import RegistrationForm, LoginForm, PostForm, UpdateForm
 from SecretSanta.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
+
+from PIL import Image
+import secrets
+import os
 
 
 # Main
@@ -86,10 +90,42 @@ def logout():
     return redirect(url_for('home'))
 
 
-@app.route("/profile")
+def save_pic(form_pic):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_pic.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/profile_pics',
+                                picture_fn)
+    output_size = (125, 125)
+    i = Image.open(form_pic)
+    i.thumbnail(output_size)
+    i.save(picture_path)
+    return picture_fn
+
+
+@app.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
-    return render_template("profile.html", title="Profile")
+    image_file = url_for('static',
+                         filename='profile_pics/' + current_user.image_file)
+    form = UpdateForm()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_pic(form.picture.data)
+            current_user.image_file = picture_file
+
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash(f'Account has been updated')
+        return redirect(url_for('profile'))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+    return render_template("profile.html",
+                           title="Profile",
+                           image_file=image_file,
+                           form=form)
 
 
 @app.route("/thanks/new", methods=['GET', 'POST'])
