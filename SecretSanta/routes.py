@@ -4,23 +4,29 @@ from SecretSanta.forms import RegistrationForm, LoginForm, PostForm, UpdateForm
 from SecretSanta.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
-from PIL import Image
-import secrets
-import os
+from SecretSanta.picture_process import save_pic
 
 
-# Main
+# Main page
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html", title="Count Down")
 
 
-@app.route("/secretsanta")
-def secretsanta():
-    return render_template("secret.html", title="Secret Santa")
+# Shuffle page
+@app.route("/join")
+def join():
+    return render_template("join.html", title="Join")
 
 
+# About page
+@app.route("/about")
+def about():
+    return render_template("about.html", title="About")
+
+
+# Thanks posting page
 @app.route("/thanks")
 def thanks():
     page = request.args.get('page', 1, type=int)
@@ -29,25 +35,13 @@ def thanks():
     return render_template("thanks.html", title="Thanks", posts=posts)
 
 
-@app.route("/user/<string:username>")
-def user_posts(username):
-    page = request.args.get('page', 1, type=int)
-    user = User.query.filter_by(username=username).first_or_404()
-
-    posts = Post.query.filter_by(author=user)\
-        .order_by(Post.date_posted.desc())\
-        .paginate(page=page,per_page=12)
-    return render_template("user_posts.html",
-                           title="User Post",
-                           posts=posts,
-                           user=user)
+# Contact page
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", title="Contact")
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html", title="About")
-
-
+# Register page
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -66,6 +60,7 @@ def register():
     return render_template("register.html", title="Register", form=form)
 
 
+# Login page
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -84,25 +79,14 @@ def login():
     return render_template("login.html", title="Log In", form=form)
 
 
+# Log out page
 @app.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('home'))
 
 
-def save_pic(form_pic):
-    random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_pic.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/profile_pics',
-                                picture_fn)
-    output_size = (125, 125)
-    i = Image.open(form_pic)
-    i.thumbnail(output_size)
-    i.save(picture_path)
-    return picture_fn
-
-
+# Profile page
 @app.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
@@ -128,6 +112,22 @@ def profile():
                            form=form)
 
 
+# User's posts page
+@app.route("/user/<string:username>")
+def user_posts(username):
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+
+    posts = Post.query.filter_by(author=user)\
+        .order_by(Post.date_posted.desc())\
+        .paginate(page=page,per_page=12)
+    return render_template("user_posts.html",
+                           title="User Post",
+                           posts=posts,
+                           user=user)
+
+
+# Create new post page
 @app.route("/thanks/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
@@ -146,12 +146,14 @@ def new_post():
                            legend='New Post')
 
 
+# View post by id page
 @app.route("/thanks/<int:post_id>")
 def post(post_id):
     post = Post.query.get_or_404(post_id)
     return render_template('post.html', title=post.title, post=post)
 
 
+# Update post by id page
 @app.route("/thanks/<int:post_id>/update", methods=['GET', 'POST'])
 @login_required
 def update_post(post_id):
@@ -175,6 +177,7 @@ def update_post(post_id):
                            legend='Update Post')
 
 
+# Delete post by id page
 @app.route("/thanks/<int:post_id>/delete", methods=['GET', 'POST'])
 @login_required
 def delete_post(post_id):
