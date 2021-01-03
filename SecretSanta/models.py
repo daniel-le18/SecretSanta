@@ -1,5 +1,6 @@
 from datetime import datetime
-from SecretSanta import db, login_manager
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from SecretSanta import db, login_manager, app
 from flask_login import UserMixin
 
 
@@ -20,6 +21,22 @@ class User(db.Model, UserMixin):
 
     def __repr__(self) -> str:
         return f"User('{self.username}','{self.email}','{self.image_file}')"
+
+    # Methods to reset email
+    # Generate reset token with expiration
+    def get_reset_token(self, expires_sec=1800):
+        s = Serializer(app.config['SECRET_KEY'], expires_sec)
+        return s.dumps({'user_id': self.id}).decode('utf-8')
+
+    # Check the token
+    @staticmethod
+    def verify_reset_token(token):
+        s = Serializer(app.config['SECRET_KEY'])
+        try:
+            user_id = s.loads(token)['user_id']
+        except:
+            return None
+        return User.query.get(int(user_id))
 
 
 class Post(db.Model):

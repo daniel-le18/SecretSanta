@@ -7,29 +7,11 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous"
   />
-  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
-  in messages %}
-  <h2>{{ message }}</h2>
-  {% endfor %} {% endif %} {% endwith%}
-  <div class="title">LOG IN</div>
+  <div class="title">RESET PASSWORD</div>
 
   <!-- FORM -->
   <form class="form" method="POST" action="">
     {{ form.hidden_tag() }}
-
-    <!-- EMAIL -->
-    <div class="input_field">
-      {% if form.email.errors %} {{ form.email(class="form-control
-      form-control-lg is-invalid") }}
-      <div class="invalid-feedback">
-        {% for error in form.email.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </div>
-      {% else %} {{form.email(class="input", placeholder="EMAIL")}}
-      <i class="far fa-envelope"></i>
-      {% endif %}
-    </div>
 
     <!-- PASSWORD -->
     <div class="input_field">
@@ -46,24 +28,24 @@
       {% endif %}
     </div>
 
-    <!-- REMEMBER -->
-    <div class="form-check">
-      {{ form.remember(class="form-check-input") }} {{
-      form.remember.label(class="form-check-label") }}
-      <small class="text-muted ml2">
-        <a href="{{url_for('reset_request')}}">FORGOT PASSWORD ?</a>
-      </small>
+    <!-- CONFIRM PASSWORD -->
+    <div class="input_field">
+      {% if form.confirm_password.errors %} {{
+      form.confirm_password(class="form-control form-control-lg is-invalid") }}
+      <div class="invalid-feedback">
+        {% for error in form.confirm_password.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      {% else %} {{form.confirm_password(class="input",placeholder="CONFIRM
+      PASSWORD",type="password")}}
+      <i class="fas fa-lock"></i>
+      {% endif %}
     </div>
 
     <!-- SUBMIT -->
     <div class="btn-place">{{form.submit(class="btn")}}</div>
   </form>
-
-  <div class="forgot">
-    <small class="text-muted">
-      NEED AN ACCOUNT ? <a href="{{url_for('register')}}">SIGN UP</a></small
-    >
-  </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

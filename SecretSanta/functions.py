@@ -1,7 +1,7 @@
 from PIL import Image
 import secrets
 import os
-from SecretSanta import app
+from SecretSanta import app, mail
 
 
 def save_pic(form_pic):
