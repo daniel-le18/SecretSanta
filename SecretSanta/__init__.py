@@ -1,24 +1,32 @@
-import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
+from SecretSanta.config import Config
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'e35de442a2f784c922de'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('email')
-app.config['MAIL_PASSWORD'] = os.environ.get('password')
+db = SQLAlchemy()
+bcrypt = Bcrypt()
+login_manager = LoginManager()
+mail = Mail()
 
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
-mail = Mail(app)
+login_manager.login_view = 'users.login'
 
-login_manager.login_view = 'login'
 
-from SecretSanta import routes
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+    mail.init_app(app)
+
+    from SecretSanta.users.routes import users
+    from SecretSanta.posts.routes import posts
+    from SecretSanta.main.routes import main
+    app.register_blueprint(users)
+    app.register_blueprint(posts)
+    app.register_blueprint(main)
+
+    return app

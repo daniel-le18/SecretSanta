@@ -51,7 +51,7 @@
       {{ form.remember(class="form-check-input") }} {{
       form.remember.label(class="form-check-label") }}
       <small class="text-muted ml2">
-        <a href="{{url_for('reset_request')}}">FORGOT PASSWORD ?</a>
+        <a href="{{url_for('users.reset_request')}}">FORGOT PASSWORD ?</a>
       </small>
     </div>
 
@@ -61,7 +61,8 @@
 
   <div class="forgot">
     <small class="text-muted">
-      NEED AN ACCOUNT ? <a href="{{url_for('register')}}">SIGN UP</a></small
+      NEED AN ACCOUNT ?
+      <a href="{{url_for('users.register')}}">SIGN UP</a></small
     >
   </div>
 </div>

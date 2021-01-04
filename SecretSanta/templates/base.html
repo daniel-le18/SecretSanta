@@ -28,30 +28,27 @@
     {% endif %}
   </head>
 
-  <!-- Container
--->
-
+<!-- Navigation bar -->
   <body>
     <div class="nav-bar">
       <ul class="menu-bar">
-        <li class="nav"><a href="{{url_for('home')}}">HOME</a></li>
+        <li class="nav"><a href="{{url_for('main.home')}}">HOME</a></li>
         <li class="nav">
-          <a href="{{url_for('join')}}">JOIN</a>
+          <a href="{{url_for('main.join')}}">JOIN</a>
         </li>
-        <li class="nav"><a href="{{url_for('about')}}">ABOUT</a></li>
-        <li class="nav"><a href="{{url_for('thanks')}}">THANKS</a></li>
-        <li class="nav"><a href="{{url_for('contact')}}">CONTACT</a></li>
-
+        <li class="nav"><a href="{{url_for('main.about')}}">ABOUT</a></li>
+        <li class="nav"><a href="{{url_for('posts.thanks')}}">THANKS</a></li>
+        <li class="nav"><a href="{{url_for('main.contact')}}">CONTACT</a></li>
       </ul>
 
       <ul class="users">
         {% if current_user.is_authenticated %}
-        <li class="nav"><a href="{{url_for('new_post')}}">POST</a></li>
-        <li class="nav"><a href="{{url_for('profile')}}">PROFILE</a></li>
-        <li class="nav"><a href="{{url_for('logout')}}">LOG OUT</a></li>
+        <li class="nav"><a href="{{url_for('posts.new_post')}}">POST</a></li>
+        <li class="nav"><a href="{{url_for('users.profile')}}">PROFILE</a></li>
+        <li class="nav"><a href="{{url_for('users.logout')}}">LOG OUT</a></li>
         {% else %}
-        <li class="nav"><a href="{{url_for('login')}}">LOG IN</a></li>
-        <li class="nav"><a href="{{url_for('register')}}">SIGN UP</a></li>
+        <li class="nav"><a href="{{url_for('users.login')}}">LOG IN</a></li>
+        <li class="nav"><a href="{{url_for('users.register')}}">SIGN UP</a></li>
         {% endif %}
       </ul>
     </div>
