@@ -95,6 +95,9 @@ h2 {
   font-size: 40px;
   color: rgb(239, 47, 60);
 }
+.text-message {
+  max-height: fit-content;
+}
 #timer {
   color: #f6f4f3;
   text-align: center;
@@ -136,7 +139,7 @@ h2 {
   background: #fff;
   padding: 60px 45px;
   position: relative;
-  top: 30%;
+  top: 40%;
   margin-left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;

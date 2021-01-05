@@ -46,9 +46,12 @@
         {% endif %}
       </ul>
     </div>
-    {% with messages=get_flashed_messages() %}{% if messages %}{% for message in
-    messages %}
-    <h2 style="color: yellow; padding-top: 10%">{{message}}</h2>
-    {% endfor %}{% endif %}{% endwith%} {%block body%}{%endblock body%}
+    <div class="text-message">
+      {% with messages=get_flashed_messages() %}{% if messages %}{% for message
+      in messages %}
+      <h2 style="color: yellow; padding-top: 5%">{{message}}</h2>
+      {% endfor %}{% endif %}{% endwith%}
+    </div>
+    {%block body%}{%endblock body%}
   </body>
 </html>
