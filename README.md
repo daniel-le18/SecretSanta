@@ -11,12 +11,11 @@
 
 https://www.sneakyelf.com
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
 
-
-# SecretSanta
-A Secret Santa using Flask framework
-
+# Secret Santa
+A website built with Flask framework where you can trade and exchange gifts during the holidays.
 
 ![Alt Text](https://media.giphy.com/media/Z7VkIE2Q8vK5iqtLpw/giphy.gif)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
