@@ -5,9 +5,8 @@ main = Blueprint('main', __name__)
 
 # Main page
 @main.route("/")
-@main.route("/home")
 def home():
-    return render_template("home.html", title="Count Down")
+    return render_template("home.html", title="Home")
 
 
 # About page
