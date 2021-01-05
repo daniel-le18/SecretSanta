@@ -20,7 +20,7 @@ html {
   backdrop-filter: blur(10px);
   align-items: center;
   padding: 0 2px;
-  margin-left: 5%;
+  margin-left: 15%;
 }
 
 .menu-bar li,
@@ -66,9 +66,9 @@ html {
   transform: scale(1.2);
 }
 .container {
-  padding-top: 15%;
+  margin-top: 6%;
+  margin-left: 25%;
   position: relative;
-  margin: auto;
   overflow: hidden;
   width: 1000px;
   height: 500px;
@@ -80,7 +80,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 5px;
   color: #e8edec;
-  font-size: 60px;
+  font-size: 90px;
   color: rgb(240, 162, 2);
 }
 .nav-bar h2 {
@@ -132,28 +132,27 @@ h2 {
 }
 .wrapper {
   max-width: 500px;
-  width: 100%;
-  height: auto;
+  width: 50%;
   background: #fff;
   padding: 60px 45px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
+  position: relative;
+  top: 30%;
+  margin-left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
 }
 .wrapper-post {
   width: 90%;
   height: auto;
-  margin-top: 10%;
   padding: 50px 50px;
-  position: absolute;
+  position: relative;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .title {
   margin-bottom: 20px;
   text-align: center;
@@ -183,7 +182,7 @@ h2 {
 .wrapper .form .btn {
   width: 70%;
   margin: 20px auto 0;
-  background: #b59235;
+  background: #0f0f0e;
   padding: 12px;
   border-radius: 25px;
   color: #e8edec;
@@ -270,13 +269,4 @@ a.article-title:hover {
   margin: 0 1.5%;
   width: 30%;
   padding-left: 5%;
-}
-
-.footer {
-  position: fixed;
-  width: 100%;
-  height: 15%;
-  padding-top: 40%;
-  padding-left: 10%;
-  bottom: 20%;
 }

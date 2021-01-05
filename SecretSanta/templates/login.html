@@ -1,1 +1,57 @@
-{% extends "base.html" %}{% block body %}<div class="wrapper"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/> <div class="title">LOG IN</div><form class="form" method="POST" action="">{{form.hidden_tag()}}<div class="input_field">{% if form.email.errors %}{{form.email(class="form-control form-control-lg is-invalid")}}<div class="invalid-feedback">{% for error in form.email.errors %}<span>{{error}}</span>{% endfor %}</div>{% else %}{{form.email(class="input", placeholder="EMAIL")}}<i class="far fa-envelope" ></i >{% endif %}</div><div class="input_field">{% if form.password.errors %}{{form.password(class="form-control form-control-lg is-invalid")}}<div class="invalid-feedback">{% for error in form.password.errors %}<span>{{error}}</span>{% endfor %}</div>{% else %}{{form.password(class="input",placeholder="PASSWORD",type="password")}}<i class="fas fa-lock" ></i >{% endif %}</div><div class="form-check">{{form.remember(class="form-check-input")}}{{form.remember.label(class="form-check-label")}}<small class="text-muted ml2" > <a href="{{url_for('users.reset_request')}}">FORGOT PASSWORD ?</a> </small> </div><div class="btn-place">{{form.submit(class="btn")}}</div></form> <div class="forgot"> <small class="text-muted"> NEED AN ACCOUNT ? <a href="{{url_for('users.register')}}">SIGN UP</a></small > </div></div><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>{% endblock body%}
+{% extends "base.html" %}{% block body %}
+<div class="wrapper">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <div class="title">LOG IN</div>
+  <form class="form" method="POST" action="">
+    {{form.hidden_tag()}}
+    <div class="input_field">
+      {% if form.email.errors %}{{form.email(class="form-control form-control-lg
+      is-invalid")}}
+      <div class="invalid-feedback">
+        {% for error in form.email.errors %}<span>{{error}}</span>{% endfor %}
+      </div>
+      {% else %}{{form.email(class="input", placeholder="EMAIL")}}<i
+        class="far fa-envelope"
+      ></i
+      >{% endif %}
+    </div>
+    <div class="input_field">
+      {% if form.password.errors %}{{form.password(class="form-control
+      form-control-lg is-invalid")}}
+      <div class="invalid-feedback">
+        {% for error in form.password.errors %}<span>{{error}}</span>{% endfor
+        %}
+      </div>
+      {% else
+      %}{{form.password(class="input",placeholder="PASSWORD",type="password")}}<i
+        class="fas fa-lock"
+      ></i
+      >{% endif %}
+    </div>
+    <div class="form-check">
+      {{form.remember(class="form-check-input")}}{{form.remember.label(class="form-check-label")}}<small
+        class="text-muted ml2"
+      >
+        <a href="{{url_for('users.reset_request')}}">FORGOT PASSWORD ?</a>
+      </small>
+    </div>
+    <div class="btn-place">{{form.submit(class="btn")}}</div>
+  </form>
+  <div class="forgot">
+    <small class="text-muted">
+      NEED AN ACCOUNT ?
+      <a href="{{url_for('users.register')}}">SIGN UP</a></small
+    >
+  </div>
+</div>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+{% endblock body%}
