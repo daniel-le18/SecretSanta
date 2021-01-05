@@ -41,8 +41,8 @@ def get_random_user():
     random_user = User.query.filter().order_by(func.random()).first()
     while current_user.email == random_user.email:
         random_user = User.query.filter().order_by(func.random()).first()
-        current_user.isJoined = True
-        db.session.commit()
+    current_user.isJoined = True
+    db.session.commit()
     return random_user
 
 
