@@ -53,8 +53,9 @@ class UpdateForm(FlaskForm):
                            validators=[DataRequired(),
                                        Length(min=2, max=12)])
     email = StringField("Email", validators=[DataRequired(), Email()])
-    picture = FileField('Update Profile Picture',
-                        validators=[FileAllowed(['jpg', 'png'])])
+    picture = FileField(
+        'Update Profile Picture',
+        validators=[FileAllowed(['jpg', 'png', 'gif', 'jpeg'])])
     submit = SubmitField("UPDATE")
 
     def validate_username(self, username):
@@ -93,3 +94,14 @@ class ResetPassWordForm(FlaskForm):
         ],
     )
     submit = SubmitField("RESET PASSWORD")
+
+
+class DrawForm(FlaskForm):
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    submit = SubmitField("JOIN THE SHUFFLE")
+
+    def validate_email(self, email):
+        if email.data != current_user.email:
+            user = User.query.filter_by(email=email.data).first()
+            if user:
+                raise ValidationError('Your email does not match')

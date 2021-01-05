@@ -10,12 +10,6 @@ def home():
     return render_template("home.html", title="Count Down")
 
 
-# Shuffle page
-@main.route("/join")
-def join():
-    return render_template("join.html", title="Join")
-
-
 # About page
 @main.route("/about")
 def about():

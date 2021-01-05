@@ -18,6 +18,8 @@ class User(db.Model, UserMixin):
                            nullable=False,
                            default='default.png')
     password = db.Column(db.String(60), nullable=False)
+    isJoined = db.Column(db.Boolean(), default=False)
+
     posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self) -> str:

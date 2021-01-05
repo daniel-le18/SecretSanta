@@ -15,7 +15,6 @@
       rel="apple-touch-icon"
       href="{{url_for('static',filename='img/bell.png')}}"
     />
-
     <script src="{{url_for('static',filename='snow.js')}}"></script>
     <link
       rel="stylesheet"
@@ -28,17 +27,16 @@
     {% endif %}
   </head>
 
-<!-- Navigation bar -->
+  <!-- Navigation bar -->
   <body>
     <div class="nav-bar">
       <ul class="menu-bar">
         <li class="nav"><a href="{{url_for('main.home')}}">HOME</a></li>
         <li class="nav">
-          <a href="{{url_for('main.join')}}">JOIN</a>
+          <a href="{{url_for('users.join')}}">JOIN</a>
         </li>
         <li class="nav"><a href="{{url_for('main.about')}}">ABOUT</a></li>
         <li class="nav"><a href="{{url_for('posts.thanks')}}">THANKS</a></li>
-        <li class="nav"><a href="{{url_for('main.contact')}}">CONTACT</a></li>
       </ul>
 
       <ul class="users">
@@ -52,13 +50,13 @@
         {% endif %}
       </ul>
     </div>
+    <div>
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <h2 style="color: yellow; padding-top: 10%">{{ message }}</h2>
+      {% endfor %} {% endif %} {% endwith%}
+    </div>
 
-    {% with messages = get_flashed_messages() %} {% if messages %} {% for
-    message in messages %}
-    <h2 style="color: red; padding-top: 5%";">{{ message }}</h2>
-    {% endfor %} {% endif %} {% endwith%}
-
-  {%block body%}{%endblock body%}
-  
+    {%block body%}{%endblock body%}
   </body>
 </html>

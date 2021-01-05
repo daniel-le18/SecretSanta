@@ -4,8 +4,9 @@ from flask_login import login_user, current_user, logout_user, login_required
 from SecretSanta import db, bcrypt
 from SecretSanta.models import User, Post
 from SecretSanta.users.forms import (RegistrationForm, LoginForm, UpdateForm,
-                                     RequestResetForm, ResetPassWordForm)
-from SecretSanta.users.utils import save_pic, send_reset_email
+                                     RequestResetForm, ResetPassWordForm,
+                                     DrawForm)
+from SecretSanta.users.utils import get_random_user, save_pic, send_email, send_reset_email
 users = Blueprint('users', __name__)
 
 
@@ -24,7 +25,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash(f'Account created for {form.username.data} !')
-        return redirect(url_for('user.slogin'))
+        return redirect(url_for('users.login'))
     return render_template("register.html", title="Register", form=form)
 
 
@@ -66,6 +67,7 @@ def profile():
             picture_file = save_pic(form.picture.data)
             current_user.image_file = picture_file
 
+        # Make changes to database from form
         current_user.username = form.username.data
         current_user.email = form.email.data
         db.session.commit()
@@ -129,3 +131,23 @@ def reset_token(token):
     return render_template('reset_token.html',
                            title='Reset PassWord',
                            form=form)
+
+
+# Shuffle page
+@users.route("/join", methods=['GET', 'POST'])
+@login_required
+def join():
+    form = DrawForm()
+    if form.validate_on_submit():
+        if current_user.isJoined == True:
+            flash(f'You have already joined, please check your email!')
+        else:
+            random_user = get_random_user()
+            print(current_user.isJoined)
+            send_email(current_user, random_user)
+            flash(f'Thank you for joining, check email for more information !')
+            return redirect(url_for('main.home'))
+    return render_template("join.html",
+                           title="Join",
+                           form=form,
+                           legend="JOIN SECRET SANTA")

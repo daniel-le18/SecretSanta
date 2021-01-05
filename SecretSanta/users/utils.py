@@ -5,8 +5,10 @@ from PIL import Image
 from flask import current_app
 from flask import url_for
 from flask_mail import Message
-
-from SecretSanta import mail
+from flask_login import current_user
+from sqlalchemy.sql import func
+from SecretSanta import mail, db
+from SecretSanta.models import User
 
 
 def save_pic(form_pic):
@@ -32,4 +34,22 @@ def send_reset_email(user):
 
 If you did not make this request please ignore this email and no changes will be made
     '''
+    mail.send(msg)
+
+
+def get_random_user():
+    random_user = User.query.filter().order_by(func.random()).first()
+    while current_user.email == random_user.email:
+        random_user = User.query.filter().order_by(func.random()).first()
+        current_user.isJoined = True
+        db.session.commit()
+    return random_user
+
+
+def send_email(user, random_user):
+    msg = Message('Secret Santa',
+                  sender='no-reply@sneakyelf.com',
+                  recipients=[user.email])
+    msg.body = f'''You will be the Secret Santa of  {random_user.username}. You can contact them at
+{random_user.email}'''
     mail.send(msg)
