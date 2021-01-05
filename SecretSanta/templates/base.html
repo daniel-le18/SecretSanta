@@ -56,7 +56,9 @@
       <h2 style="color: yellow; padding-top: 10%">{{ message }}</h2>
       {% endfor %} {% endif %} {% endwith%}
     </div>
-
+    <div class="footer">
+      <img src="{{url_for('static',filename='img/santa.png')}}" />
+    </div>
     {%block body%}{%endblock body%}
   </body>
 </html>
