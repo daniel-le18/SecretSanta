@@ -24,6 +24,7 @@ class RegistrationForm(FlaskForm):
             Length(min=4, max=12)
         ],
     )
+    wish = StringField("Desired present", validators=[DataRequired()])
     submit = SubmitField("SUBMIT")
 
     def validate_username(self, username):
@@ -43,7 +44,7 @@ class LoginForm(FlaskForm):
     password = StringField("Password",
                            validators=[DataRequired(),
                                        Length(min=4, max=12)])
-    remember = BooleanField("REMEMBER ME")
+    remember = BooleanField("remember me")
     submit = SubmitField("LOG IN")
 
 

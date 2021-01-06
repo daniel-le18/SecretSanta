@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% block body %}
+<div class="wrapper-post">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <div class="form-result">
+    <div class="title" style="font-size: 55px">{{legend}}</div>
+    {% if result %}
+    <h2 class="text-message">{{result[0]}}</h2>
+    <h2 class="text-message">{{result[1]}}</h2>
+    {% else %}
+    <h2 class="text-message">Please try again!</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock body%}

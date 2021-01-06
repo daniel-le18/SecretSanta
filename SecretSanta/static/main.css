@@ -1,10 +1,11 @@
-@import url(https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Dosis:wght@500;600&display=swap);
 body,
 html {
   background: url(/static/img/background.png) center;
   height: 100%;
   margin: 0;
-  font-family: "Gochi Hand", cursive !important;
+  font-family: "Dosis", sans-serif !important;
+  font-weight: 400 !important;
 }
 .nav-bar {
   display: flex;
@@ -95,9 +96,7 @@ h2 {
   font-size: 40px;
   color: rgb(239, 47, 60);
 }
-.text-message {
-  max-height: fit-content;
-}
+
 #timer {
   color: #f6f4f3;
   text-align: center;
@@ -213,15 +212,17 @@ h2 {
 
 .content-section {
   background: #ffffff;
-  padding: 10px 20px;
+  padding: 25px 30px;
   border: 1px solid #dddddd;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-bottom: 20px;
+  border-radius: 20px;
 }
 
 .article-title {
   color: #444444;
   font-weight: bold;
+  letter-spacing: 0.1rem;
 }
 
 a.article-title:hover {
@@ -231,6 +232,7 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
+  font-size: 25px;
 }
 
 .article-img {
@@ -272,4 +274,19 @@ a.article-title:hover {
   margin: 0 1.5%;
   width: 30%;
   padding-left: 5%;
+}
+
+.form-result {
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 25px;
+}
+.text-message {
+  color: white;
+  font-size: 50px;
 }

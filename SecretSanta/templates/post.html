@@ -20,7 +20,7 @@
             >{{post.author.username}}</a
           >
           <small class="text-muted"
-            >Posted on{{post.date_posted.strftime('%B %d,%Y')}}</small
+            >Posted on {{ post.date_posted.strftime('%B %d,%Y')}}</small
           >{% if post.author==current_user %}
           <div>
             <a

@@ -7,7 +7,7 @@ from SecretSanta.models import Post
 posts = Blueprint('posts', __name__)
 
 
-# Thanks posting page
+# Wish posting page
 @posts.route("/thanks")
 def thanks():
     page = request.args.get('page', 1, type=int)

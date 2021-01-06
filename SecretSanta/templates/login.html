@@ -6,7 +6,8 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous"
   />
-  <div class="title">LOG IN</div>
+
+  <div class="title">Log In</div>
   <form class="form" method="POST" action="">
     {{form.hidden_tag()}}
     <div class="input_field">
@@ -15,7 +16,7 @@
       <div class="invalid-feedback">
         {% for error in form.email.errors %}<span>{{error}}</span>{% endfor %}
       </div>
-      {% else %}{{form.email(class="input", placeholder="EMAIL")}}<i
+      {% else %}{{form.email(class="input", placeholder="email")}}<i
         class="far fa-envelope"
       ></i
       >{% endif %}
@@ -28,7 +29,7 @@
         %}
       </div>
       {% else
-      %}{{form.password(class="input",placeholder="PASSWORD",type="password")}}<i
+      %}{{form.password(class="input",placeholder="password",type="password")}}<i
         class="fas fa-lock"
       ></i
       >{% endif %}
@@ -37,9 +38,10 @@
       {{form.remember(class="form-check-input")}}{{form.remember.label(class="form-check-label")}}<small
         class="text-muted ml2"
       >
-        <a href="{{url_for('users.reset_request')}}">FORGOT PASSWORD ?</a>
       </small>
     </div>
+    <a href="{{url_for('users.reset_request')}}">Forgot Password ?</a>
+
     <div class="btn-place">{{form.submit(class="btn")}}</div>
   </form>
   <div class="forgot">

@@ -11,6 +11,8 @@ users = Blueprint('users', __name__)
 
 
 # Register page
+# Take all information from html's Register form and put them into database
+# Hash password before putting in
 @users.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -21,7 +23,8 @@ def register():
             form.password.data).decode('utf-8')
         user = User(username=form.username.data,
                     email=form.email.data,
-                    password=hashed_password)
+                    password=hashed_password,
+                    wish=form.wish.data)
         db.session.add(user)
         db.session.commit()
         flash(f'Account created for {form.username.data} !')
@@ -30,6 +33,8 @@ def register():
 
 
 # Login page
+# Take all the information users put in from html's Login form
+# Check the input with the database, checking password by checking with hased password
 @users.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -49,6 +54,7 @@ def login():
 
 
 # Log out page
+# Using flask_login logout_user
 @users.route("/logout")
 def logout():
     logout_user()
@@ -56,6 +62,7 @@ def logout():
 
 
 # Profile page
+# TODO: prevent users from changing information after joining
 @users.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
@@ -83,6 +90,7 @@ def profile():
 
 
 # User's posts page
+# Take out posts by user by query the posts with the user relationship
 @users.route("/user/<string:username>")
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
@@ -97,6 +105,8 @@ def user_posts(username):
                            user=user)
 
 
+# Reset page
+# Take in input using htlm form RequestResetForm
 @users.route("/reset_password", methods=['GET', 'POST'])
 def reset_request():
     if current_user.is_authenticated:
@@ -112,6 +122,9 @@ def reset_request():
                            form=form)
 
 
+# Reset the password using token
+# Take in token and check if token is valid
+# Then reset the password (hash it before)
 @users.route("/reset_password/<token>", methods=['GET', 'POST'])
 def reset_token(token):
     if current_user.is_authenticated:
@@ -140,13 +153,19 @@ def join():
     form = DrawForm()
     if form.validate_on_submit():
         if current_user.isJoined == True:
-            flash(f'You have already joined, please check your email!')
+            flash(f'You have already joined !')
         else:
             random_user = get_random_user()
-            print(current_user.isJoined)
-            send_email(current_user, random_user)
-            flash(f'Thank you for joining, check email for more information !')
-            return redirect(url_for('main.home'))
+            if random_user is None:
+                flash(f'Not enough participants, please join later !')
+                return redirect(url_for('main.home'))
+            else:
+                # send_email(current_user, random_user)
+                secret_santa = f'''You will be {random_user.username}'s secret Santa'''
+                wish = f'''His/Her wish is {random_user.wish}'''
+                return render_template("result.html",
+                                       result=[secret_santa, wish],
+                                       legend="RESULT")
     return render_template("join.html",
                            title="Join",
                            form=form,

@@ -1,12 +1,14 @@
 import secrets
 import os
 from PIL import Image
+from flask import flash
 
 from flask import current_app
 from flask import url_for
 from flask_mail import Message
 from flask_login import current_user
 from sqlalchemy.sql import func
+from werkzeug.utils import redirect
 from SecretSanta import mail, db
 from SecretSanta.models import User
 
@@ -38,10 +40,16 @@ If you did not make this request please ignore this email and no changes will be
 
 
 def get_random_user():
-    random_user = User.query.filter().order_by(func.random()).first()
-    while current_user.email == random_user.email:
-        random_user = User.query.filter().order_by(func.random()).first()
+    random_user = User.query.filter_by(isSelected=False).order_by(
+        func.random()).first()
+    while random_user == current_user:
+        random_user = User.query.filter_by(isSelected=False).order_by(
+            func.random()).first()
+        if random_user == current_user:
+            return None
+
     current_user.isJoined = True
+    random_user.isSelected = True
     db.session.commit()
     return random_user
 
