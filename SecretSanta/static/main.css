@@ -346,7 +346,7 @@ footer p {
   color: #ccc;
   border: 1px solid #ccc;
   padding: 10px;
-  border-radius: 15px 50px 30px;
+  border-radius: 10%;
 }
 .social_footer_ul li i {
   width: 20px;
