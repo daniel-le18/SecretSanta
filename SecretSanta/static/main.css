@@ -339,12 +339,14 @@ footer p {
 .social_footer_ul li {
   display: inline-block;
   padding: 20px;
+  overflow: hidden;
 }
 .social_footer_ul li a {
   color: #ccc;
   border: 1px solid whitesmoke;
   padding: 10px;
   border-radius: 10%;
+  overflow: hidden;
 }
 .social_footer_ul li i {
   width: 20px;
