@@ -1,14 +1,12 @@
 import secrets
 import os
 from PIL import Image
-from flask import flash
 
 from flask import current_app
 from flask import url_for
 from flask_mail import Message
 from flask_login import current_user
 from sqlalchemy.sql import func
-from werkzeug.utils import redirect
 from SecretSanta import mail, db
 from SecretSanta.models import User
 
