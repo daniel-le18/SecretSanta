@@ -328,11 +328,12 @@ footer p {
 .foote_bottom_ul_amrc li a {
   color: #999;
   margin: 0 12px;
+  text-decoration: none;
 }
 
 .social_footer_ul {
   display: table;
-  margin: 15px auto 0 41%;
+  margin: 15px auto 0 39%;
   list-style-type: none;
   padding-bottom: 1%;
 }
