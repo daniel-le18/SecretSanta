@@ -332,18 +332,17 @@ footer p {
 }
 
 .social_footer_ul {
-  display: inline-block;
   margin: 15px auto 0 39%;
   list-style-type: none;
   padding-bottom: 1%;
 }
 .social_footer_ul li {
+  display: inline-block;
   padding: 20px;
-  float: left;
 }
 .social_footer_ul li a {
   color: #ccc;
-  border: 2px solid #ccc;
+  border: 1px solid whitesmoke;
   padding: 10px;
   border-radius: 10%;
 }
