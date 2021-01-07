@@ -340,12 +340,13 @@ footer p {
   padding-left: 20px;
   padding-top: 10px;
   float: left;
+  padding-right: 20px;
 }
 .social_footer_ul li a {
   color: #ccc;
   border: 1px solid #ccc;
   padding: 10px;
-  border-radius: 10%;
+  border-radius: 15px 50px 30px;
 }
 .social_footer_ul li i {
   width: 20px;
