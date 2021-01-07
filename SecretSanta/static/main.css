@@ -309,13 +309,11 @@ footer {
 footer p {
   font-size: 13px;
   color: #ccc;
-  padding-bottom: 0px;
   margin-bottom: 8px;
   text-align: center;
 }
 .foote_bottom_ul_amrc {
   list-style-type: none;
-  padding: 0px;
   display: table;
   margin-top: 10px;
   margin-right: auto;
@@ -323,7 +321,7 @@ footer p {
   margin-left: auto;
 }
 .foote_bottom_ul_amrc li {
-  display: inline;
+  display: inline-block;
 }
 .foote_bottom_ul_amrc li a {
   color: #999;
@@ -332,9 +330,8 @@ footer p {
 }
 
 .social_footer_ul {
-  margin: 15px auto 0 39%;
+  margin: 15px 40% 0 40%;
   list-style-type: none;
-  padding-bottom: 1%;
 }
 .social_footer_ul li {
   display: inline-block;
