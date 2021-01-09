@@ -14,22 +14,22 @@ body {
 .nav-bar1 {
   z-index: 1;
   position: absolute;
-  top: 1%;
+  top: 5%;
   left: 30%;
   transform: translateX(-50%);
   display: inline-block;
   animation: slide-in 1s ease-out;
-  font-size: 35px;
+  font-size: 40px;
 }
 .nav-bar2 {
   z-index: 1;
   position: absolute;
-  top: 1%;
+  top: 5%;
   right: 0%;
   transform: translateX(-50%);
   display: inline-block;
   animation: slide-in 1s ease-out;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .item-list {
@@ -112,7 +112,7 @@ body {
 }
 
 .container {
-  margin-top: 6%;
+  margin-top: 15%;
   margin-left: 25%;
   position: relative;
   overflow: hidden;
@@ -201,7 +201,16 @@ h2 {
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
+.wrapper-thanks {
+  width: 90%;
+  height: auto;
+  padding: 40px 40px;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
 .title {
   margin-bottom: 20px;
   text-align: center;
