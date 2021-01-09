@@ -1,6 +1,7 @@
-from flask import render_template, request, Blueprint
+from flask import render_template, Blueprint
 
 main = Blueprint('main', __name__)
+from SecretSanta.main.forms import ContactForm
 
 
 # Main page
@@ -22,6 +23,10 @@ def rules():
 
 
 # Contact page
-@main.route("/contact")
+@main.route("/contact", methods=['GET', 'POST'])
 def contact():
-    return render_template("contact.html", title="Contact")
+    form = ContactForm()
+    if form.validate_on_submit():
+        email = form.email.data
+        name = form.name.data
+    return render_template("contact.html", title="Contact", form=form)

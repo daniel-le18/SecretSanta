@@ -1,11 +1,7 @@
 {% extends "base.html" %}{% block body %}
-<div class="wrapper">
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous"
-  />
+<div class="wrapper" style="margin-top: 3%;">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
   <div class="title">Log In</div>
   <form class="form" method="POST" action="">
@@ -16,10 +12,7 @@
       <div class="invalid-feedback">
         {% for error in form.email.errors %}<span>{{error}}</span>{% endfor %}
       </div>
-      {% else %}{{form.email(class="input", placeholder="email")}}<i
-        class="far fa-envelope"
-      ></i
-      >{% endif %}
+      {% else %}{{form.email(class="input", placeholder="email")}}<i class="fas fa-at"></i>{% endif %}
     </div>
     <div class="input_field">
       {% if form.password.errors %}{{form.password(class="form-control
@@ -29,15 +22,11 @@
         %}
       </div>
       {% else
-      %}{{form.password(class="input",placeholder="password",type="password")}}<i
-        class="fas fa-lock"
-      ></i
-      >{% endif %}
+      %}{{form.password(class="input",placeholder="password",type="password")}}<i class="fas fa-lock"></i>{% endif %}
     </div>
     <div class="form-check">
       {{form.remember(class="form-check-input")}}{{form.remember.label(class="form-check-label")}}<small
-        class="text-muted ml2"
-      >
+        class="text-muted ml2">
       </small>
     </div>
     <a href="{{url_for('users.reset_request')}}">Forgot Password ?</a>
@@ -47,13 +36,9 @@
   <div class="forgot">
     <small class="text-muted">
       NEED AN ACCOUNT ?
-      <a href="{{url_for('users.register')}}">SIGN UP</a></small
-    >
+      <a href="{{url_for('users.register')}}">SIGN UP</a></small>
   </div>
 </div>
-<script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"
-></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% endblock body%}
