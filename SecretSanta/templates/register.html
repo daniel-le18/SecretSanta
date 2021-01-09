@@ -57,7 +57,8 @@
         {% for error in form.confirm_password.errors %}<span>{{error}}</span>{%
         endfor %}
       </div>
-      {% else %} {{form.confirm_password(class="input", placeholder="confirm password",type="password")}}
+      {% else %} {{form.confirm_password(class="input", placeholder="confirm
+      password",type="password")}}
       <i class="fas fa-lock"></i>
       {% endif %}
     </div>

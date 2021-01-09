@@ -28,23 +28,28 @@
     {% endif %}
   </head>
   <body>
-    <div class="nav-bar">
-      <ul class="menu-bar">
-        <li class="nav"><a href="{{url_for('main.home')}}">HOME</a></li>
-        <li class="nav"><a href="{{url_for('users.join')}}">JOIN</a></li>
-        <li class="nav"><a href="{{url_for('posts.thanks')}}">THANKS</a></li>
-        <li class="nav"><a href="#">RULES</a></li>
-      </ul>
-      <ul class="users">
-        {% if current_user.is_authenticated %}
-        <li class="nav"><a href="{{url_for('posts.new_post')}}">POST</a></li>
-        <li class="nav"><a href="{{url_for('users.profile')}}">PROFILE</a></li>
-        <li class="nav"><a href="{{url_for('users.logout')}}">LOG OUT</a></li>
-        {% else %}
-        <li class="nav"><a href="{{url_for('users.login')}}">LOG IN</a></li>
-        <li class="nav"><a href="{{url_for('users.register')}}">SIGN UP</a></li>
-        {% endif %}
-      </ul>
+    <div class="padding" style="padding-bottom: 10%">
+      <nav class="nav-bar1">
+        <ul class="item-list">
+          <li><a href="{{url_for('main.home')}}">HOME</a></li>
+          <li><a href="{{url_for('users.join')}}">JOIN</a></li>
+          <li><a href="{{url_for('posts.thanks')}}">THANKS</a></li>
+          <li><a href="{{url_for('main.about')}}">ABOUT</a></li>
+        </ul>
+      </nav>
+      <nav class="nav-bar2">
+        <ul class="item-list">
+          {% if current_user.is_authenticated %}
+          <li><a href="{{url_for('posts.new_post')}}">POST</a></li>
+          <li><a href="{{url_for('users.profile')}}">PROFILE</a></li>
+          <li><a href="{{url_for('users.logout')}}">LOG OUT</a></li>
+
+          {% else %}
+          <li><a href="{{url_for('users.login')}}">LOG IN</a></li>
+          <li><a href="{{url_for('users.register')}}">SIGN UP</a></li>
+          {% endif %}
+        </ul>
+      </nav>
     </div>
     <div class="text-message">
       {% with messages=get_flashed_messages() %}{% if messages %}{% for message
@@ -64,7 +69,7 @@
           &copy; Copyright @2021 | Built by
           <a
             href="https://www.daniel-le.com"
-            style="text-decoration: none; color: yellow"
+            style="text-decoration: none; color: blue"
             >Daniel Le</a
           >
         </p>
