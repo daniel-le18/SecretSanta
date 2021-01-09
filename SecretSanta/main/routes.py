@@ -15,6 +15,12 @@ def about():
     return render_template("about.html", title="About")
 
 
+# Rules page
+@main.route("/rules")
+def rules():
+    return render_template("rules.html", title="Rules")
+
+
 # Contact page
 @main.route("/contact")
 def contact():
