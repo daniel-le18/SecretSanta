@@ -3,3 +3,5 @@
 *.py linguist-detectable=true
 *.html linguist-detectable=true
 SecretSanta/templates/errors/* linguist-vendored
+SecretSanta/templates/about.html linguist-vendored
+SecretSanta/templates/services.html linguist-vendored
