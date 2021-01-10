@@ -17,19 +17,19 @@ A website built with Flask framework where you can trade and exchange gifts duri
 
 # Functions
 
-### Register
+Register
 
-### Log in
+Log in
 
-### Create posts
+Create posts
 
-### Join shuffle
+Join shuffle
 
-### Reset username,password
+Reset username, password, avatar
 
-### Modify profile
+Modify profile
 
-### Send email
+Send email
 
 # License
 [MIT](https://choosealicense.com/licenses/mit/)
