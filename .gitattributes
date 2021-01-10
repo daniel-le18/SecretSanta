@@ -6,4 +6,4 @@ SecretSanta/templates/errors/*.html linguist-vendored
 SecretSanta/templates/about.html linguist-vendored
 SecretSanta/templates/services.html linguist-vendored
 SecretSanta/templates/result.html linguist-vendored
-SecretSanta/templates/.html linguist-vendored
+SecretSanta/templates/rules.html linguist-vendored
