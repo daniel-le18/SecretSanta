@@ -16,18 +16,19 @@ https://www.sneakyelf.com
 A website built with Flask framework where you can trade and exchange gifts during the holidays.
 
 # Functions
-Register
 
-Log in
+### Register
 
-Create posts
+### Log in
 
-Join shuffle
+### Create posts
 
-Reset username,password
+### Join shuffle
 
-Modify profile
+### Reset username,password
 
-Send email
+### Modify profile
+
+### Send email
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
