@@ -2,4 +2,4 @@
 *.css linguist-detectable=true
 *.py linguist-detectable=true
 *.html linguist-detectable=true
-SecretSanta/templates/erros/* linguist-vendored
+SecretSanta/templates/errors/* linguist-documentation
