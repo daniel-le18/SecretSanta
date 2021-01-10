@@ -1,5 +1,4 @@
-from flask import render_template, Blueprint, redirect, flash
-from flask.helpers import url_for
+from flask import render_template, Blueprint, redirect, flash, url_for
 
 main = Blueprint('main', __name__)
 from SecretSanta.main.forms import ContactForm
