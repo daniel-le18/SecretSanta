@@ -30,5 +30,6 @@ A website built with Flask framework where you can trade and exchange gifts duri
 ### Modify profile
 
 ### Send email
-## License
+
+# License
 [MIT](https://choosealicense.com/licenses/mit/)
