@@ -26,8 +26,8 @@ def rules():
 
 
 # About page
-@login_required
 @main.route("/participants")
+@login_required
 def participants():
     participants = User.query.filter_by(isJoined=True).all()
     # for participant in participants:
