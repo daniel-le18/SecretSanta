@@ -25,7 +25,7 @@ def rules():
     return render_template("rules.html", title="Rules")
 
 
-# About page
+# Participants page
 @main.route("/participants")
 @login_required
 def participants():
