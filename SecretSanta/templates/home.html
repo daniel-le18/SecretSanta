@@ -1,1 +1,5 @@
-{% extends "base.html" %}{% block body %}<div class="container"><h1>Next Christmas</h1><div id="timer"></div></div> <script async src="{{url_for('static',filename='clock.js')}}"></script> {% endblock body%}
+{% extends "base.html" %}{% block body %}<div class="container">
+    <h1>Next Christmas</h1>
+    <div id="timer"></div>
+</div>
+<script async src="{{url_for('static',filename='clock.js')}}"></script> {% endblock body%}

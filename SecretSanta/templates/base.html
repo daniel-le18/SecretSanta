@@ -1,107 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{url_for('static',filename='main.css')}}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="{{url_for('static',filename='img/santa-claus.png')}}"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="{{url_for('static',filename='img/santa-claus.png')}}"
-    />
-    <script src="{{url_for('static',filename='snow.js')}}"></script>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% if title %}
-    <title>Sneaky Elf's {{title}}</title>
-    {% else %}
-    <title>Sneaky Elf</title>
-    {% endif %}
-  </head>
 
-  <body>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}" />
+    <link rel="icon" type="image/png" href="{{url_for('static',filename='img/santa-claus.png')}}" />
+    <link rel="apple-touch-icon" href="{{url_for('static',filename='img/santa-claus.png')}}" />
+    <script src="{{url_for('static',filename='snow.js')}}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {% if title %}<title>Sneaky Elf's {{title}}
+    </title> {% else %}<title>Sneaky Elf</title> {% endif %}
+</head>
+
+<body>
     <div class="padding-bt">
-      <nav class="nav-bar1">
-        <ul class="item-list">
-          <li><a href="{{url_for('main.home')}}">HOME</a></li>
-          <li><a href="{{url_for('users.join')}}">JOIN</a></li>
-          <li><a href="{{url_for('posts.thanks')}}">THANKS</a></li>
-          <li><a href="{{url_for('main.rules')}}">RULES</a></li>
-          <li><a href="{{url_for('main.participants')}}">Participants</a></li>
-        </ul>
-      </nav>
-      <nav class="nav-bar2">
-        <ul class="item-list">
-          {% if current_user.is_authenticated %}
-          <li><a href="{{url_for('posts.new_post')}}">POST</a></li>
-          <li><a href="{{url_for('users.profile')}}">PROFILE</a></li>
-          <li><a href="{{url_for('users.logout')}}">LOG OUT</a></li>
-          {% else %}
-          <li><a href="{{url_for('users.login')}}">LOG IN</a></li>
-          <li><a href="{{url_for('users.register')}}">SIGN UP</a></li>
-          {% endif %}
-        </ul>
-      </nav>
+        <nav class="nav-bar1">
+            <ul class="item-list">
+                <li><a href="{{url_for('main.home')}}">HOME</a></li>
+                <li><a href="{{url_for('users.join')}}">JOIN</a></li>
+                <li><a href="{{url_for('posts.thanks')}}">THANKS</a></li>
+                <li><a href="{{url_for('main.participants')}}">Participants</a></li>
+                <li><a href="{{url_for('main.rules')}}">RULES</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-bar2">
+            <ul class="item-list"> {% if current_user.is_authenticated %}<li><a
+                        href="{{url_for('posts.new_post')}}">POST</a></li>
+                <li><a href="{{url_for('users.profile')}}">PROFILE</a></li>
+                <li><a href="{{url_for('users.logout')}}">LOG OUT</a></li> {% else %}<li><a
+                        href="{{url_for('users.login')}}">LOG IN</a></li>
+                <li><a href="{{url_for('users.register')}}">SIGN UP</a></li> {% endif %}
+            </ul>
+        </nav>
     </div>
-    <div class="text-message">
-      {% with messages=get_flashed_messages() %}{% if messages %}{% for message
-      in messages %}
-      <h2 style="color: yellow; padding-top: 5%">{{message}}</h2>
-      {% endfor %}{% endif %}{% endwith%}
+    <div class="text-message"> {% with messages=get_flashed_messages() %}{% if messages %}{% for message in messages %}
+        <h2 style="color: yellow; padding-top: 5%">{{message}}</h2> {% endfor %}{% endif %}{% endwith%}
     </div>
     <footer class="footer">
-      <div class="footer-container">
-        <ul class="social_footer_ul">
-          <li>
-            <a href="https://daniel-le.com"
-              ><i class="far fa-address-card"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://github.com/daniel-le18"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/daniel-le18/"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-          <li>
-            <a href="mailto:sonhailenguyen@gmail.com"
-              ><i class="fas fa-paper-plane"></i
-            ></a>
-          </li>
-        </ul>
-        <ul class="foote_bottom_ul_amrc">
-          <li><a href="{{url_for('main.home')}}">Home</a></li>
-          <li><a href="{{url_for('main.about')}}">About</a></li>
-          <li><a href="{{url_for('main.services')}}">Services</a></li>
-          <li><a href="{{url_for('main.contact')}}">Contact</a></li>
-        </ul>
-        <p class="text-footer">
-          Copyright &copy; 2020-
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          | Built by
-          <a
-            href="https://daniel-le.com"
-            style="text-decoration: none; color: blue"
-            >Daniel Le</a
-          >
-        </p>
-      </div>
-    </footer>
-    {%block body%}{%endblock body%}
-  </body>
+        <div class="footer-container">
+            <ul class="social_footer_ul">
+                <li> <a href="https://daniel-le.com"><i class="far fa-address-card"></i></a></li>
+                <li> <a href="https://github.com/daniel-le18"><i class="fab fa-github"></i></a></li>
+                <li> <a href="https://www.linkedin.com/in/daniel-le18/"><i class="fab fa-linkedin"></i></a></li>
+                <li> <a href="mailto:sonhailenguyen@gmail.com"><i class="fas fa-paper-plane"></i></a></li>
+            </ul>
+            <ul class="foote_bottom_ul_amrc">
+                <li><a href="{{url_for('main.home')}}">Home</a></li>
+                <li><a href="{{url_for('main.about')}}">About</a></li>
+                <li><a href="{{url_for('main.services')}}">Services</a></li>
+                <li><a href="{{url_for('main.contact')}}">Contact</a></li>
+            </ul>
+            <p class="text-footer"> Copyright &copy; 2020-
+                <script>document.write(new Date().getFullYear());</script> | Built by <a href="https://daniel-le.com"
+                    style="text-decoration: none; color: blue">Daniel Le</a>
+            </p>
+        </div>
+    </footer> {%block body%}{%endblock body%}
+</body>
+
 </html>

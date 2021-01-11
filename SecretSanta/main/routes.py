@@ -30,8 +30,8 @@ def rules():
 @main.route("/participants")
 def participants():
     participants = User.query.filter_by(isJoined=True).all()
-    for participant in participants:
-        print(participant.username)
+    # for participant in participants:
+    #     print(participant.username)
     return render_template("participants.html",
                            title="Participants",
                            participants=participants)
