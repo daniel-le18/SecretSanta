@@ -25,9 +25,9 @@ def rules():
     return render_template("rules.html", title="Rules")
 
 
-# About page
-@login_required
+# Participants page
 @main.route("/participants")
+@login_required
 def participants():
     participants = User.query.filter_by(isJoined=True).all()
     # for participant in participants:
