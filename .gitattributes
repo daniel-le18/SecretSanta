@@ -3,11 +3,8 @@
 *.py linguist-detectable=true
 *.html linguist-detectable=true
 
-contact.html linguist-language=Python
+SecretSanta/templates/errors/*.html linguist-vendored
 login.html linguist-language=Python
 register.html linguist-language=Python
-join.html linguist-language=Python
-new_post.html linguist-language=Python
-profile.html linguist-language=Python
-thanks.html linguist-language=Python
+
 
