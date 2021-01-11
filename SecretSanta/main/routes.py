@@ -1,6 +1,9 @@
 from flask import render_template, Blueprint, redirect, flash, url_for
+from SecretSanta import create_app, db
 
 main = Blueprint('main', __name__)
+
+from SecretSanta.models import User
 from SecretSanta.main.forms import ContactForm
 from SecretSanta.main.utils import send_mail
 
@@ -21,6 +24,17 @@ def about():
 @main.route("/rules")
 def rules():
     return render_template("rules.html", title="Rules")
+
+
+# About page
+@main.route("/participants")
+def participants():
+    participants = User.query.filter_by(isJoined=True).all()
+    for participant in participants:
+        print(participant.username)
+    return render_template("participants.html",
+                           title="Participants",
+                           participants=participants)
 
 
 # Contact page

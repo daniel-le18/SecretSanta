@@ -25,7 +25,7 @@ body {
   z-index: 1;
   position: absolute;
   top: 1%;
-  right: 0%;
+  right: -5%;
   transform: translateX(-50%);
   display: inline-block;
   animation: slide-in 1s ease-out;
@@ -211,6 +211,12 @@ h2 {
   transform: translate(-50%, -50%);
   border-radius: 20px;
 }
+.wrapper-part {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-rows: 50px;
+}
 .title {
   margin-bottom: 20px;
   text-align: center;
@@ -340,7 +346,7 @@ input:focus {
 
 .content-section {
   background: #ffffff;
-  padding: 10px 20px 0px 10px;
+  padding: 10px 30px 0px 10px;
   border: 1px solid #dddddd;
   border-radius: 5px;
   margin-bottom: 20px;
