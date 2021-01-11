@@ -1,6 +1,5 @@
 from flask import render_template, Blueprint, redirect, flash, url_for
-from SecretSanta import create_app, db
-
+from flask_login import login_required
 main = Blueprint('main', __name__)
 
 from SecretSanta.models import User
@@ -27,6 +26,7 @@ def rules():
 
 
 # About page
+@login_required
 @main.route("/participants")
 def participants():
     participants = User.query.filter_by(isJoined=True).all()
