@@ -1,1 +1,14 @@
-{% extends "base.html" %}{% block body %}<style>h2{text-align:center;margin-left:20%;margin-right:20%;color:antiquewhite}</style><div class="wrapper-post"><h1>Project</h1> <img src="{{url_for('static',filename='img/santa1.gif')}}" height="200px" width="200px"" style=" float:left;"><h2> This service is a project I built and still under development. <br> It currently only supports 1 group at a time.</h2></div> {% endblock body%}
+{% extends "base.html" %}{% block body %}<style>
+    h2 {
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        color: antiquewhite
+    }
+</style>
+<div class="wrapper-post">
+    <h1>Project</h1> <img src="{{url_for('static',filename='img/santa1.gif')}}" height="200px" width="200px"" style="
+        float:left;">
+    <h2> This service is a project I built and still under development. <br> It currently only supports 1 group at a
+        time.</h2>
+</div> {% endblock body%}

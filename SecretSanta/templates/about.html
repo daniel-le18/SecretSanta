@@ -1,1 +1,14 @@
-{% extends "base.html" %}{% block body %}<style>h2{text-align:center;margin-left:20%;margin-right:20%;color:antiquewhite}</style><div class="wrapper-post"><h1>About US</h1> <img src="{{url_for('static',filename='img/santa1.gif')}}" height="300px" width="300px"" style=" float:left"><h2> Sneaky Elf™ is a free, online gift exchange service website for the holidays. We are dedicated to making gift exchange events very simple to create and manage, and also hope to bring joy to your holidays!</h2></div> {% endblock body%}
+{% extends "base.html" %}{% block body %}<style>
+    h2 {
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        color: antiquewhite
+    }
+</style>
+<div class="wrapper-post">
+    <h1>About US</h1> <img src="{{url_for('static',filename='img/santa1.gif')}}" height="300px" width="300px"" style="
+        float:left">
+    <h2> Sneaky Elf™ is a free, online gift exchange service website for the holidays. We are dedicated to making gift
+        exchange events very simple to create and manage, and also hope to bring joy to your holidays!</h2>
+</div> {% endblock body%}

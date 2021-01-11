@@ -1,1 +1,20 @@
-{% extends "base.html" %}{% block body %}<div class="wrapper-post"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" /> <section class="display-content"> <article class="media content-section"> <img class="rounded-circle article-img" src="{{url_for('static', filename='profile_pics/'+ post.author.image_file)}}" /><div class="media-body"><div class="article-metadata"> <a class="mr-2" href="{{url_for('users.user_posts',username=post.author.username)}}" >{{post.author.username}}</a > <small class="text-muted" >Posted on {{ post.date_posted.strftime('%B %d,%Y')}}</small >{% if post.author==current_user %}<div> <a class="btn btn-secondary btn-sm m-1" href="{{url_for('posts.update_post',post_id=post.id)}}" >Update</a > <a class="btn btn-danger btn-sm m-1" href="{{url_for('posts.delete_post',post_id=post.id)}}" method="POST" > Delete </a></div> {% endif %}</div><h2 class="article-title">{{post.title}}</h2><p class="article-content">{{post.content}}</p></div> </article> </section> {% endblock body%}</div>
+{% extends "base.html" %}{% block body %}<div class="wrapper-post">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <section class="display-content">
+        <article class="media content-section"> <img class="rounded-circle article-img"
+                src="{{url_for('static', filename='profile_pics/'+ post.author.image_file)}}" />
+            <div class="media-body">
+                <div class="article-metadata"> <a class="mr-2"
+                        href="{{url_for('users.user_posts',username=post.author.username)}}">{{post.author.username}}</a>
+                    <small class="text-muted">Posted on {{ post.date_posted.strftime('%B %d,%Y')}}</small>{% if
+                    post.author==current_user %}<div> <a class="btn btn-secondary btn-sm m-1"
+                            href="{{url_for('posts.update_post',post_id=post.id)}}">Update</a> <a
+                            class="btn btn-danger btn-sm m-1" href="{{url_for('posts.delete_post',post_id=post.id)}}"
+                            method="POST"> Delete </a></div> {% endif %}</div>
+                <h2 class="article-title">{{post.title}}</h2>
+                <p class="article-content">{{post.content}}</p>
+            </div>
+        </article>
+    </section> {% endblock body%}
+</div>

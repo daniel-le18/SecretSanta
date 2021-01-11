@@ -1,1 +1,24 @@
-{% extends "base.html" %}{% block body %}<div class="wrapper-contact"><link rel=" stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" /><div class="title" style="margin-left: 50%;">Contact Me</div><form class="form-contact" method="POST" action=""> {{form.hidden_tag()}} <img src="/static/img/email.png" style="max-width: 50%; float:left;" alt=""><div class=" input_field-contact"> {% if form.name.errors %} {{form.name(class="form-control form-control-lg is-invalid")}}<div class="invalid-feedback"> {% for error in form.name.errors %}<span>{{error}}</span>{% endfor%}</div> {% else %}{{form.name(class="input-contact", placeholder="name")}}<i class="fas fa-user"></i>{% endif %}</div><div class="input_field-contact"> {% if form.email.errors %} {{form.email(class="form-control form-control-lg is-invalid")}}<div class="invalid-feedback"> {% for error in form.email.errors %}<span>{{error}}</span>{% endfor %}</div> {% else %}{{form.email(class="input-contact", placeholder="email")}}<i class="fas fa-at"></i>{% endif %}</div><div class="input_field-contact"> {% if form.message.errors %} {{form.message(class="form-control form-control-lg is-invalid")}}<div class="invalid-feedback"> {% for error in form.message.errors %}<span>{{error}}</span>{% endfor %}</div> {% else %} {{form.message(class="input-contact-text", placeholder="message")}} <i class="far fa-envelope"></i>{% endif %}</div><div class="btn-place">{{form.submit(class="btn")}}</div></form></div> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> {% endblock body%}
+{% extends "base.html" %}{% block body %}<div class="wrapper-contact">
+    <link rel=" stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <div class="title" style="margin-left: 50%">Contact Me</div>
+    <form class="form-contact" method="POST" action=""> {{form.hidden_tag()}} <img src="/static/img/email.png"
+            style="max-width: 50%; float: left" alt="" />
+        <div class="input_field-contact"> {% if form.name.errors %} {{form.name(class="form-control form-control-lg
+            is-invalid")}}<div class="invalid-feedback"> {% for error in form.name.errors %}<span>{{error}}</span>{%
+                endfor%}</div> {% else %}{{form.name(class="input-contact", placeholder="name")}}<i
+                class="fas fa-user"></i>{% endif %}</div>
+        <div class="input_field-contact"> {% if form.email.errors %} {{form.email(class="form-control form-control-lg
+            is-invalid")}}<div class="invalid-feedback"> {% for error in form.email.errors %}<span>{{error}}</span>{%
+                endfor %}</div> {% else %}{{form.email(class="input-contact", placeholder="email")}}<i
+                class="fas fa-at"></i>{% endif %}</div>
+        <div class="input_field-contact"> {% if form.message.errors %} {{form.message(class="form-control
+            form-control-lg is-invalid")}}<div class="invalid-feedback"> {% for error in form.message.errors
+                %}<span>{{error}}</span>{% endfor %}</div> {% else %} {{form.message(class="input-contact-text",
+            placeholder="message")}} <i class="far fa-envelope"></i>{% endif %}</div>
+        <div class="btn-place">{{form.submit(class="btn")}}</div>
+    </form>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script> {% endblock body%}
