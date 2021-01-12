@@ -8,7 +8,7 @@ body {
   font-weight: 400 !important;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 100px; /* height of your footer */
+  padding-bottom: 300px; /* height of your footer */
 }
 
 .nav-bar1 {
@@ -112,8 +112,8 @@ body {
 }
 
 .container {
-  margin-top: 10%;
-  margin-left: 23%;
+  margin-top: 15%;
+  margin-left: 25%;
   position: relative;
   overflow: hidden;
   width: 1000px;
@@ -149,6 +149,7 @@ h2 {
   text-transform: uppercase;
   font-size: 1em;
   letter-spacing: 5px;
+  margin-top: 10%;
 }
 .days,
 .hours,
@@ -183,7 +184,7 @@ h2 {
   background: #fff;
   padding: 60px 45px;
   position: relative;
-  top: 30%;
+  top: 43%;
   margin-left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
@@ -310,7 +311,7 @@ input-text:focus {
   background: #fff;
   padding: 40px 45px;
   position: relative;
-  top: 55%;
+  top: 70%;
   margin-left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
@@ -371,7 +372,7 @@ input-text:focus {
 
 .content-section {
   background: #ffffff;
-  padding: 5px 20px 0px 10px;
+  padding: 10px 30px 0px 10px;
   border: 1px solid #dddddd;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -395,8 +396,8 @@ a.article-title:hover {
 }
 
 .article-img {
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
   margin-right: 16px;
 }
 
@@ -432,6 +433,7 @@ a.article-title:hover {
   display: inline-block;
   margin: 0 1.5%;
   width: 30%;
+  padding-left: 5%;
 }
 
 .form-result {
@@ -456,7 +458,7 @@ a.article-title:hover {
 }
 .footer-container {
   background: url(/static/img/snow.png);
-  padding-top: 28%;
+  padding-top: 20%;
 }
 .footer p {
   padding-top: 2px;
@@ -485,7 +487,7 @@ a.article-title:hover {
 }
 
 .social_footer_ul {
-  margin: 5px 40% 0 40%;
+  margin: 15px 40% 0 40%;
   list-style-type: none;
 }
 .social_footer_ul li {
