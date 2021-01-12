@@ -12,10 +12,20 @@
         </div>
         <form class="form" method="POST" action="" enctype="multipart/form-data"> {{form.hidden_tag()}}<p
                 class="form-text">Update username</p>
-            <div class="input_field">{% if form.username.errors %}{{form.username(class="form-control form-control-lg
-                is-invalid")}}<div class="invalid-feedback">{% for error in form.username.errors
-                    %}<span>{{error}}</span>{% endfor %}</div>{% else %}{{form.username(class="input")}}<i
-                    class="fas fa-user"></i>{% endif %}</div>
+            <div class="input_field">
+                {% if form.username.errors %}
+                {{form.username(class="form-control form-control-lg
+                is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.username.errors%}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.username(class="input")}}
+                <i class="fas fa-user"></i>
+                {% endif %}
+            </div>
             <p class="form-text">Update email</p>
             <div class="input_field">{% if form.email.errors %}{{form.email(class="form-control form-control-lg
                 is-invalid")}}<div class="invalid-feedback">{% for error in form.email.errors %}<span>{{error}}</span>{%
@@ -29,4 +39,5 @@
         </form>
     </div>
 </div>
-</div>{% endblock body%}
+</div>
+{% endblock body%}

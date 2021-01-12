@@ -1,7 +1,21 @@
-{% extends "base.html" %}{% block body %}<div class="wrapper-contact" style="margin-top: -5%">
-    <link rel=" stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <h1 style="font-size: 45px; padding-bottom: 5%; color: rgb(240, 162, 2)"> Participants List</h1>
-    <div class="wrapper-part"> {% for participant in participants %}<h2 style="font-size: 30px">{{ participant.username
-            }}</h2> {% endfor %}</div>
-</div>{% endblock body%}
+{% extends "base.html" %}{% block body %}
+<div class="wrapper-contact-part" style="margin-top: -5%">
+  <link
+    rel=" stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <h1 style="font-size: 40px; padding-bottom: 5%; color: red; font-weight: 700">
+    Participants List
+  </h1>
+  <div class="wrapper-part">
+    {% for participant in participants %}
+    <h2 style="font-size: 30px">
+      <img src="{{url_for('static',filename='img/santa-hat.png')}}" /> {{
+      participant.username }}
+    </h2>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body%}

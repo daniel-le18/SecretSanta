@@ -1,15 +1,36 @@
-{% extends "base.html" %}{% block body %}<div class="wrapper">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <form class="form" method="POST" action=""> {{form.hidden_tag()}}<div class="title">{{legend}}</div>
-        <div class="input_field"> {% if form.title.errors %}{{form.title(class="form-control form-control-lg
-            is-invalid")}}<div class="invalid-feedback"> {% for error in form.title.errors %}<span>{{error}}</span>{%
-                endfor %}</div> {% else %} {{form.title(class="input", placeholder="TITLE")}} <i
-                class="far fa-envelope"></i> {% endif %}</div>
-        <div class="input_field"> {% if form.content.errors %}{{form.content(class="form-control form-control-lg
-            is-invalid")}}<div class="invalid-feedback"> {% for error in form.content.errors %}<span>{{error}}</span>{%
-                endfor %}</div> {% else %} {{form.content(class="input",placeholder="CONTENT",type="password")}} <i
-                class="far fa-envelope-open-text"></i> {% endif %}</div>
-        <div class="btn-place">{{form.submit(class="btn")}}</div>
-    </form>
-</div> {% endblock body%}
+{% extends "base.html" %}{% block body %}
+<div class="wrapper">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <form class="form" method="POST" action="">
+    {{form.hidden_tag()}}
+    <div class="title">{{legend}}</div>
+
+    <div class="input_field">
+      {% if form.title.errors %}{{form.title(class="form-control form-control-lg
+      is-invalid")}}
+      <div class="invalid-feedback">
+        {% for error in form.title.errors %}<span>{{error}}</span>{% endfor %}
+      </div>
+      {% else %} {{form.title(class="input", placeholder="TITLE")}}
+      <i class="far fa-envelope"></i> {% endif %}
+    </div>
+
+    <div class="input_field">
+      {% if form.content.errors %}{{form.content(class="form-control
+      form-control-lg is-invalid")}}
+      <div class="invalid-feedback">
+        {% for error in form.content.errors %}<span>{{error}}</span>{% endfor %}
+      </div>
+      {% else %}
+      {{form.content(class="input",placeholder="CONTENT",type="password")}}
+      <i class="far fa-envelope-open-text"></i> {% endif %}
+    </div>
+    <div class="btn-place">{{form.submit(class="btn")}}</div>
+  </form>
+</div>
+{% endblock body%}

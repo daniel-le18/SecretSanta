@@ -161,8 +161,8 @@ def join():
                 return redirect(url_for('main.home'))
             else:
                 # send_email(current_user, random_user)
-                secret_santa = f'''You will be {random_user.username}'s secret Santa'''
-                wish = f'''His/Her wish is {random_user.wish}'''
+                secret_santa = f'''{random_user.username}'''
+                wish = f'''{random_user.wish}'''
                 return render_template("result.html",
                                        result=[secret_santa, wish],
                                        legend="RESULT")
