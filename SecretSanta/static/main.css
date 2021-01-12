@@ -246,6 +246,15 @@ h2 {
   border: none;
 }
 
+.input-text {
+  width: 100%;
+  border: none;
+  font-size: 25px;
+  background: #eee;
+  text-shadow: #1d2120;
+  border: none;
+  margin-top: 1%;
+}
 .form .btn {
   width: 70%;
   margin: 20px auto 0;
@@ -266,6 +275,9 @@ h2 {
   padding-top: 3%;
 }
 input:focus {
+  outline: none !important;
+}
+input-text:focus {
   outline: none !important;
 }
 /* COntact */
@@ -292,6 +304,18 @@ input:focus {
   transform: translate(-50%, -50%);
   border-radius: 20px;
 }
+.wrapper-contact-part {
+  margin-top: 10%;
+  max-width: 900px;
+  width: 90%;
+  background: #fff;
+  padding: 40px 45px;
+  position: relative;
+  top: 70%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
 .input-contact {
   width: 100%;
   border: none;
@@ -314,7 +338,9 @@ input:focus {
 .input-contact-text:focus {
   outline: none !important;
 }
-
+.input {
+  outline: none !important;
+}
 .form-contact .btn {
   width: 20%;
   margin: 20px auto 0;
