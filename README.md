@@ -15,5 +15,11 @@ https://www.sneakyelf.com
 # Secret Santa
 A website built with Flask framework where you can trade and exchange gifts during the holidays.
 
+# Functions
+- Register user, login, reset password
+- Shuffle and query the database to bring out the random Santa
+- Posting thanks to Santa
+- Working contact mail using Flask-Mail
+
 # License
 [MIT](https://choosealicense.com/licenses/mit/)
