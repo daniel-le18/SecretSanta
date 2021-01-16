@@ -16,7 +16,7 @@ https://www.sneakyelf.com
 A website built with Flask framework where you can trade and exchange gifts during the holidays.
 
 # Functions
-- Register user, login, reset password
+- Register user, login, reset password by sending email
 - Shuffle and query the database to bring out the random Santa
 - Posting thanks to Santa
 - Working contact mail using Flask-Mail
